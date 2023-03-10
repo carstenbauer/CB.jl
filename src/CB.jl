@@ -35,16 +35,20 @@ function install_startupjl()
     config_path = joinpath(home(), ".julia/config")
     sys_startupjl = joinpath(config_path, "startup.jl")
     if isfile(sys_startupjl)
-        @info("Existing startup.jl found. Backing it up.")
-        bkp_name = "old_$(now())_startup.jl"
-        mv(sys_startupjl, joinpath(config_path, bkp_name); force = true)
+        if !(first(readlines(sys_startupjl)) == "# managed by CB.jl")
+            @info("Existing startup.jl found. Backing it up.")
+            bkp_name = "old_$(now())_startup.jl"
+            mv(sys_startupjl, joinpath(config_path, bkp_name); force = true)
+        else
+            @info("Existing startup.jl by CB.jl found. Will overwrite it.")
+        end
     end
     if !ispath(config_path)
         @info("No prior startup.jl found.")
         mkpath(config_path)
     end
     @info("Creating new startup.jl.")
-    cp(cb_startupjl, sys_startupjl)
+    cp(cb_startupjl, sys_startupjl; force = true)
     return nothing
 end
 
