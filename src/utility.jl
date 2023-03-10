@@ -19,10 +19,11 @@ function withjlenv(f, env)
 end
 
 home() = home = get(ENV, "HOME", "~")
+jldepot() = first(Pkg.depots())
 
 function getglobaljlenv()
     major = VERSION.major
     minor = VERSION.minor
     env = "v$(major).$(minor)"
-    return joinpath(home(), ".julia/environments/", env)
+    return joinpath(jldepot(), "environments/", env)
 end
