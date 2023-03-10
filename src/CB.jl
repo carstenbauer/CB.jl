@@ -32,7 +32,7 @@ end
 
 function install_startupjl()
     cb_startupjl = joinpath(@__DIR__, "../startup.jl")
-    config_path = joinpath(home(), ".julia/config")
+    config_path = joinpath(jldepot(), "config")
     sys_startupjl = joinpath(config_path, "startup.jl")
     if isfile(sys_startupjl)
         if !(first(readlines(sys_startupjl)) == "# managed by CB.jl")
