@@ -52,4 +52,9 @@ function install_startupjl()
     return nothing
 end
 
+function install()
+    install_defaultpkgs()
+    install_startupjl()
+end
+
 end
