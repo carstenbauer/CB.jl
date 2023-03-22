@@ -15,6 +15,7 @@ end
 const DEFAULT_PKGS = vcat([
                               "OhMyREPL",
                               "Cthulhu",
+                              "JET",
                               "Revise",
                               "BenchmarkTools",
                               "CpuId",
