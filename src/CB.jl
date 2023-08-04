@@ -6,27 +6,21 @@ using Dates
 
 include("utility.jl")
 
-@static if Sys.islinux()
-    const SYS_DEPENDENT_PKGS = ["ThreadPinning"]
-else
-    const SYS_DEPENDENT_PKGS = String[]
-end
-
-const DEFAULT_PKGS = vcat([
-                              "OhMyREPL",
-                              "Cthulhu",
-                              "JET",
-                              "Revise",
-                              "BenchmarkTools",
-                              "CpuId",
-                              "Hwloc",
-                              "PkgTemplates",
-                              "JuliaFormatter",
-                              "Preferences",
-                              "PreferenceTools",
-                              "ThreadPinning",
-                              "TestEnv",
-                          ], SYS_DEPENDENT_PKGS)
+const DEFAULT_PKGS = [
+                          "OhMyREPL",
+                          "Cthulhu",
+                          "JET",
+                          "Revise",
+                          "BenchmarkTools",
+                          "CpuId",
+                          "Hwloc",
+                          "PkgTemplates",
+                          "JuliaFormatter",
+                          "Preferences",
+                          "PreferenceTools",
+                          "ThreadPinning",
+                          "TestEnv",
+                     ]
 
 function install_defaultpkgs(; glob = true)
     pkgstr = join(DEFAULT_PKGS, ' ')
