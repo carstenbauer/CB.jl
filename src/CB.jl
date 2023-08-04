@@ -22,6 +22,9 @@ const DEFAULT_PKGS = vcat([
                               "Hwloc",
                               "PkgTemplates",
                               "JuliaFormatter",
+                              "Preferences",
+                              "PreferenceTools",
+                              "ThreadPinning",
                               "TestEnv",
                           ], SYS_DEPENDENT_PKGS)
 
