@@ -19,6 +19,7 @@ const DEFAULT_PKGS = [
                           "Preferences",
                           "PreferenceTools",
                           "ThreadPinning",
+                          "ChunkSplitters",
                           "TestEnv",
                      ]
 
