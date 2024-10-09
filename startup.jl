@@ -69,5 +69,3 @@ if isinteractive()
         ["@about"]               => :(using About; macro about(x) Expr(:call, About.about, x) end),
     ])
 end
-
-end
