@@ -21,6 +21,8 @@ const DEFAULT_PKGS = [
                           "ThreadPinning",
                           "ChunkSplitters",
                           "TestEnv",
+                          "About",
+                          "BasicAutoloads",
                      ]
 
 function install_defaultpkgs(; glob = true)
